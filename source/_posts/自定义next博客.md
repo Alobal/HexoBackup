@@ -18,8 +18,7 @@ language: zh-CN
 timezone: ''
 ```
 ## 2. Next的分类和标签
-在next主题配置里，选择下列字段进行注释和取消注释即可打开相关页面，例如分类页和标签页。
-
+在next主题配置里，选择下列字段进行注释和取消注释即可启用相关页面，例如分类页和标签页。
 >分类有层级，标签没有层级。
 
 ```python
@@ -34,6 +33,15 @@ menu:
   #commonweal: /404/ || fa fa-heartbeat
 ```
 
+但相关页面还需要自己生成，在项目根目录下输入相应命令，创建相关页面。
+- ``hexo new page categories``
+- ``hexo new page tags``
+
+并且打开生成的页面，在元数据中相应添加字段
+- ``type: categories``
+- ``type: tags``。
+
+
 然后在自己的每篇博客描述头中，加入``categories:`` ``tags:``的相关字段，例如这篇：
 ```python
 categories: 
@@ -44,7 +52,7 @@ categories:
 先去网易云音乐里生成外链播放器， 不能生成的可查找特殊方法生成。
 
 在 项目/themes/next/layout/_macro/sidebar.swig中， 插入复制的代码，比如插入在最下面某一段.
->注意20版本后缀不是swig
+>注意20版本后缀不是swig，相关文件也不一样
 
 ## 4. 代码高亮BUG
 代码高亮只有背景和行号存在， 代码字体本身不变

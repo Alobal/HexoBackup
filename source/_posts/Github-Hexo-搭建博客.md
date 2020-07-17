@@ -20,7 +20,7 @@ tags:
 
 >可以使用cmd，但我遇到了中文问题。
 >
->powershell运行会提示 “在此系统上禁止运行脚本”， 也有相关方法解决， 但麻烦。
+>powershell运行会提示 “在此系统上禁止运行脚本”， 管理员权限下输入 `` set-executionpolicy remotesigned`` 更改安全策略，允许运行脚本。
 
 运行``npm install -g hexo-cli``进行安装
 
