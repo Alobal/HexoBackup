@@ -35,4 +35,4 @@ print(scores)
 print(scores.mean())
 ```
 <br>
-![简单示例结果](https://upload-images.jianshu.io/upload_images/19387483-a0b9666de4e6c99a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![简单示例结果](https://wx4.sinaimg.cn/mw1024/b8e57787gy1ggtsuv1f83j20ko05o74c.jpg)

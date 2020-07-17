@@ -104,6 +104,6 @@ deploy:
 
 prism_plugin: 
   mode: 'preprocess' 
-  theme: 'vs' 
+  theme: 'twilight' 
   line_number: true 
-  custom_css: "./custom-prism.css"
+  # custom_css: 

@@ -26,7 +26,7 @@ for i in oridata['unitPrice']:
 
 oridata.head()
 ```
-####    结果失败: ![本体值没变](https://upload-images.jianshu.io/upload_images/19387483-053cf87027f51347.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+####    结果失败: ![本体值没变](https://wx1.sinaimg.cn/mw1024/b8e57787gy1ggtsuupcxhj20cy07tq30.jpg)
 
 ###    2. for i in (0,series.size)遍历
 ```
@@ -41,7 +41,7 @@ for i in range(0,oridata['unitPrice'].values.size):
     oridata['unitPrice'].values[i]=Str2Price(oridata['unitPrice'].values[i])
 ```
 ####    结果成功:
-![可以看到成功替换](https://upload-images.jianshu.io/upload_images/19387483-9ccc03ccac839cc6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![可以看到成功替换](https://wx3.sinaimg.cn/mw1024/b8e57787gy1ggtsuw05xzj20af06kmx4.jpg)
 
 
 # 二. 值成功整理之后OLS依然错误:  Pandas data cast to numpy dtype of object. Check input data with np.asarray(data).
@@ -70,7 +70,7 @@ x1=sm.add_constant(x)
 est=sm.OLS(y,x1).fit()
 est.summary()
 ```
-![运行报错](https://upload-images.jianshu.io/upload_images/19387483-057e6c7dbad74179.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![运行报错](https://wx3.sinaimg.cn/mw1024/b8e57787gy1ggtsuuug01j20x402f749.jpg)
 
 ##  解决方法: 在传参给OLS的y和x1后面,加上强制类型转换 .astype(float)
 >但是字符串直接转成float时依然有这个错误, 有点奇怪 理应和astype(float)作用相同
@@ -80,7 +80,7 @@ est.summary()
 est=sm.OLS(y.astype(float),x1.astype(float)).fit()
 ```
 ####    成功运行: (r方值小的不能再小的破单元模型= =
-![成功OLS结果](https://upload-images.jianshu.io/upload_images/19387483-175b207ef43b6df2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![成功OLS结果](https://wx3.sinaimg.cn/mw1024/b8e57787gy1ggtsuuuyz1j20l00fowf2.jpg)
 
 # 附OLS常用模型:
 ```

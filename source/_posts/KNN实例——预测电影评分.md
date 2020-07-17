@@ -94,4 +94,4 @@ PredictByKNN(20,50)
 # 预测实例
 ###    预测3.28,实际3.41
 ###    一定程度上还是挺准确的, 仅仅利用了分类和流行度作为相似标准,实现简单但是效果挺好.
-![示例运行](https://upload-images.jianshu.io/upload_images/19387483-5e1cef03df8b9d0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![示例运行](https://wx2.sinaimg.cn/mw1024/b8e57787gy1ggtsuupwq1j20xc08bgnn.jpg)

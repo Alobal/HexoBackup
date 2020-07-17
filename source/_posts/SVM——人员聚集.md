@@ -93,4 +93,4 @@ def plotPredictions(clf,x,y,color):
 plotPredictions(svc,x[:,0],x[:,1],y.astype(np.float))
 
 ```
-![结果图](https://upload-images.jianshu.io/upload_images/19387483-af236da1dc4077eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![结果图](https://wx3.sinaimg.cn/mw1024/b8e57787gy1ggtsuv8gloj20d50ab3yg.jpg)

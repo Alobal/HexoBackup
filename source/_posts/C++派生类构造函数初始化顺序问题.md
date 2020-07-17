@@ -48,7 +48,7 @@ int main()
 ```
  
 如上，派生类Derived构造时，基类初始化base(a)，用了派生类私有成员a，同时a也被参数i初始化。此时因为基类初始化在a初始化之前，传给base（）的a是随机值。输出结果是：
-![x!=i](https://upload-images.jianshu.io/upload_images/19387483-53e396616e132279.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![x!=i](https://wx4.sinaimg.cn/mw1024/b8e57787gy1ggtt5j2vutj204p02f3yb.jpg)
 
 所以我们可以知道，即使是初始化列表里，即使a的初始化排在前面，也一定是先初始化基类base，再调用派生类私有成员的初始化。
 >想要正常构造，把base（a)改成base（i）即可。
@@ -88,4 +88,4 @@ derived(int i)：a(i){ cout << "a:" << a << endl; base(a); }
 然后进入函数体内输出a值
 然后a传参给base（int i）
 Really？
-![运行结果:](https://upload-images.jianshu.io/upload_images/19387483-d4e08b4d2eb86f08.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![运行结果:](https://wx3.sinaimg.cn/mw1024/b8e57787gy1ggtt5j06rmj20mi05hgln.jpg)
