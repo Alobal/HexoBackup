@@ -6,12 +6,12 @@
    -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);
    -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);
 }
-
+//背景护眼黄 悬浮链接蓝
 :root {
     --body-bg-color: #f9dbb647;
-    --link-hover-color: #f58904;
+    --link-hover-color: #0546fd;
 }
-
+//标题颜色黑色
 .site-title {
     font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
     font-size: 1.375em;
@@ -19,15 +19,36 @@
     margin: 0;
     color: #222;
 }
-
+//标题带去除
 .brand {
     background: #2220;
 }
-
+//侧边栏深黑
 .sidebar {
     background: hsl(0, 0%, 8%);
     bottom: 0;
     box-shadow: inset 0 2px 6px #000;
     position: fixed;
     top: 0;
+}
+
+//小句代码 黑底白字
+code {
+    background: #2f0303;
+    border-radius: 3px;
+    color: #fffefe;
+    padding: 2px 4px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+//链接色 红色
+a, span.exturl {
+    border-bottom: 1px solid #999;
+    color: #f31515;
+    outline: 0;
+    text-decoration: none;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    cursor: pointer;
 }
