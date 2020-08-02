@@ -31,7 +31,7 @@ date: 2020-02-17 02:17:00
 因为这种方法会遍历完所有'（'可能的位置，进而能够确定括号串，因此不会重复也不会遗漏。
 
 - ###   递归法代码
-```
+```cpp
 class Solution {
 public:
     vector<string> generateParenthesis(int n)
@@ -59,6 +59,7 @@ public:
     }
 };
 ```
+
 |  提交时间  |  提交结果  |  执行用时  |  内存消耗  |  语言  |
 | --- | --- | --- | --- | --- |
 | 2 天前 | 通过 | 20 ms | 17 MB | Cpp |
@@ -77,7 +78,7 @@ public:
 因为要找到所有可能结果，因此c的取值需要遍历所有可能。
 
 - ###   动态规划代码
-```
+```cpp
 class Solution {
 public:
     vector<string> generateParenthesis(int n)
@@ -93,7 +94,9 @@ public:
         return resultmap[n];
     }
 };
+
 ```
+
 |  提交时间  |  提交结果  |  执行用时  |  内存消耗  |  语言  |
 | --- | --- | --- | --- | --- |
 | 2 天前 | 通过 | 12 ms | 9.6 MB | Cpp |
