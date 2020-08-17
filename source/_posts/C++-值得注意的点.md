@@ -1,12 +1,12 @@
 ---
 title: C++-值得注意的点
 categories:
-- 语言&&工具
+- C++
 date: 2020-02-17 02:17:00
 ---
 # [explicit 说明符——Cppreference](https://zh.cppreference.com/w/cpp/language/explicit)
 指定构造函数 (及转换函数或推导指引) 为显式, **不能被隐式调用**
-```
+```cpp
 //from Cpp reference
 struct B
 {
