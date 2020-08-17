@@ -104,6 +104,6 @@ deploy:
 
 prism_plugin: 
   mode: 'preprocess' 
-  theme: 'twilight' 
+  theme: 'duotone-light' 
   line_number: true 
   # custom_css: 

@@ -1,11 +1,11 @@
 // 主页文章添加阴影
-.post {
-   margin-top: 20px;  //大小自行调整 
-   margin-bottom: 20px; //大小自行调整
-   padding: 10px;      //大小自行调整
-   -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);
-   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);
-}
+// .post {
+//    margin-top: 20px;  //大小自行调整 
+//    margin-bottom: 20px; //大小自行调整
+//    padding: 10px;      //大小自行调整
+//    -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);
+//    -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);
+// }
 //背景色 链接悬浮色
 :root {
     // --body-bg-color: #f9dbb647;
@@ -17,47 +17,49 @@
     font-size: 1.375em;
     font-weight: normal;
     margin: 0;
-    color: #222;
+    color: #fff;
 }
 //标题带去除
 .brand {
     background: #2220;
 }
 //侧边栏深黑
-.sidebar {
-    background: hsl(0, 0%, 8%);
-    bottom: 0;
-    box-shadow: inset 0 2px 6px #000;
-    position: fixed;
-    top: 0;
-}
+// .sidebar {
+//     background: hsl(0, 0%, 8%);
+//     bottom: 0;
+//     box-shadow: inset 0 2px 6px #000;
+//     position: fixed;
+//     top: 0;
+// }
 
 //单句代码 
-code {
-    background: #e6e6e221;
-    border-radius: 30px;
-    color: #ff1010;
-    padding: 1px 10px;
-    overflow-wrap: break-word;
-    overflow-wrap: break-word;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+p code {
+    font-size: 1em;
+    line-height: 1.5rem;
+    color: #333;
+    font-weight: bold;
+    border: 1px solid #ebc65a;
+    background: #fff;
+    box-shadow: 0.2em 0.2em 0 0 #ebc65a;
+    padding: 0.1em 0.4em;
+    margin: 0 0.4em;
+    vertical-align: bottom;
 }
 
 //链接色 
-a, span.exturl {
-    border-bottom: 1px solid #999;
-    color: #ea0e0e;
-    outline: 0;
-    text-decoration: none;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    cursor: pointer;
-}
+// a, span.exturl {
+//     border-bottom: 1px solid #999;
+//     color: #ea0e0e;
+//     outline: 0;
+//     text-decoration: none;
+//     overflow-wrap: break-word;
+//     word-wrap: break-word;
+//     cursor: pointer;
+// }
 
 //1级标题
 h1 {
-    font-size: 2.0em;
+    font-size: 2em;
     color: #ea0e0e;
     margin-top: 100px;
 }
@@ -68,19 +70,26 @@ h2 {
 }
 
 h3 {
-    font-size: 1.25em;
-    color: orange;
-}
-
-h4 {
-    font-size: 1em;
+    font-size: 1.2em;
     color: darkblue;
     font-weight: bold;
 }
 
+h4 {
+    font-size: 1.2em;
+    color: darkblue;
+    font-weight: bold;
+}
 
-h1, h2, h3 {
-    margin-top: 80px;
+body{
+    font-size: 14px;
+}
+
+.post-body h1, .post-body h2 {
+    /* padding-bottom: 0.3em; */
+    /* border-bottom: 1px solid #eaecef; */
+    /* transition: box-shadow 0.5s cubic-bezier(0.71, 0, 0, 0.99); */
+    box-shadow: inset 0 -0.6em 0 #ffeb88;
 }
 
 //顶部标签
