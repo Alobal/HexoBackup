@@ -10,50 +10,50 @@ tags:
 
 # First title 一级标题  MarkDown示例
 
-``# First title 一级标题  MarkDown示例``
+```# First title 一级标题  MarkDown示例```
 
 ## Second title 二级标题
 
-``## Second title 二级标题``
+```## Second title 二级标题```
 
 ### Third title 三级标题
 
-``### Third title 三级标题``
+```### Third title 三级标题```
 
 
 #### Fourth 四级标题
 
-``#### Fourth 四级标题``
+```#### Fourth 四级标题```
 
 ##### Fifth 五级标题 下面是分割线
 
-``##### Fifth 五级标题 下面是分割线``
+```##### Fifth 五级标题 下面是分割线```
 
 ---
 
-``---``
+```---```
 
 ## 1. 正文书写
 
-``## 1. 正文书写``
+```## 1. 正文书写```
 
 标准正文示例.
 
-``标准正文示例.``
+```标准正文示例.```
 
 
 **粗体示例**
 
-``**粗体示例**``
+```**粗体示例**```
 
 *斜体示例*
 
-``*斜体示例*``
+```*斜体示例*```
 
 
 ***粗斜体示例***
 
-``***粗斜体示例***``
+```***粗斜体示例***```
 
 >引用示例
 >
@@ -128,7 +128,7 @@ tags:
 ## 2. 资源插入
 1. 代码段插入示例``for day in time``
 
-``1. 代码段插入示例\`\`for day in time\`\```
+```1. 代码段插入示例\`\`for day in time\`\` ```
 
 2. 代码块插入示例: 
 
@@ -157,9 +157,9 @@ int main()
 
 3. [链接插入示例](www.lianjie.com)
 
-``3. [链接插入示例](www.lianjie.com)``
+```3. [链接插入示例](www.lianjie.com)```
 
 4. 图片插入示例:
 
 ![图片注释, 链接路径用网络路径或者本地相对路径，有些编辑器支持显示图片注释，但很多并不支持](https://wx3.sinaimg.cn/mw1024/b8e57787gy1ggttahhdrsj20qo0m841e.jpg)
-``![图片注释, 链接路径用网络路径或者本地相对路径，有些编辑器支持显示图片注释，但很多并不支持](https://wx3.sinaimg.cn/mw1024/b8e57787gy1ggttahhdrsj20qo0m841e.jpg)``
+```![图片注释, 链接路径用网络路径或者本地相对路径，有些编辑器支持显示图片注释，但很多并不支持](https://wx3.sinaimg.cn/mw1024/b8e57787gy1ggttahhdrsj20qo0m841e.jpg)```

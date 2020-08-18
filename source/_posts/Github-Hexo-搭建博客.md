@@ -54,7 +54,7 @@ hexo s                # 部署本地服务器
 ```yml
 deploy:
 type: git
-repo: 仓库的完整路径，推荐使用 ssh 路径，这样可以有 ssh 免密登录。例如我的 git@github.com:Alobal/HexoBackup.git
+repo: 仓库的完整路径，推荐使用 ssh 路径，这样可以有 ssh 免密登录。例如我的 git@github.com:Alobal/Blog.git
 branch: master
 ```
 
@@ -86,6 +86,7 @@ hexo d
 
 ## 选一个你喜欢的主题
 
+
 ### 下载主题
 
 [hexo 主题库](https://hexo.io/themes/)
@@ -95,6 +96,7 @@ hexo d
 例如``git clone https://github.com/next-theme/hexo-theme-next themes/next``
 
 >如果使用 next 主题请注意， next 主题在 2020 之前是 theme-next 项目，2020 版本是 next-theme 项目，配置字段有点不同，根据需要选择。19 版本网上教程比较健全了。
+
 
 ### 配置主题
 
