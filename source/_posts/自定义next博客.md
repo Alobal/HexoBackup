@@ -67,7 +67,7 @@ categories:
 
 ## 字数统计和阅读时长
 
-在 next 主题配置文件中搜索 wordcount，可以看到它默认支持的插件是 hexo-symbols-count-time
+在 next 主题配置文件中搜索 wordcount，可以看到它默认支持的插件是 [hexo-symbols-count-time](https://github.com/theme-next/hexo-symbols-count-time)
 
 使用命令行 npm 输入命令进行安装：``npm i hexo-symbols-count-time --save``
 
@@ -77,7 +77,9 @@ symbols_count_time:
 	symbols: true
 	time: true
 	total_symbols: true
-	total_time: true
+  total_time: true
+  awl: 2      #设置2个字符看作一个字
+  wpm: 200    #每分钟阅读字数
 ```
 
 next 主题 _config.yml 里找到字段 symbols_count_time 按需配置即可：
@@ -88,8 +90,7 @@ symbols_count_time:
   separated_meta: true
   item_text_post: true
   item_text_total: true
-  awl: 2      #设置2个字符看作一个字
-  wpm: 200    #每分钟阅读字数
+
 ```
 
 重新生成部署即可，如果没有效果，试试 hexo clean 再重新生成
