@@ -314,7 +314,7 @@ post_navigation: left
 # TagCloud settings for tags page.
 tagcloud:
   # All values below are same as default, change them by yourself.
-  min: 12 # Minimun font size in px
+  min: 15 # Minimun font size in px
   max: 30 # Maxium font size in px
   start: "#ccc" # Start color (hex, rgba, hsla or color keywords)
   end: "#111" # End color (hex, rgba, hsla or color keywords)
@@ -502,7 +502,7 @@ math:
 
   # hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.
   mathjax:
-    enable: false
+    enable: true
     # See: https://mhchem.github.io/MathJax-mhchem/
     mhchem: false
 
@@ -678,7 +678,7 @@ google_analytics:
   only_pageview: false
 
 # Baidu Analytics
-baidu_analytics: # <app_id>
+baidu_analytics: 13a5881f99caf50927823ae25a7cb3ee
 
 # Growingio Analytics
 growingio_analytics: # <project_id>

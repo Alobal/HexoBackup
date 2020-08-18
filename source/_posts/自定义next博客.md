@@ -56,7 +56,7 @@ categories:
 先去网易云音乐里生成外链播放器， 不能生成的可查找特殊方法生成。
 
 在 项目/themes/next/layout/_macro/sidebar.swig 中， 插入复制的代码，比如插入在最下面某一段。
->注意 20 版本后缀不是 swig，相关文件也不一样
+>注意 2020 版本后缀不是 swig，相关文件也不一样
 
 
 
@@ -91,6 +91,29 @@ symbols_count_time:
 ```
 
 重新生成部署即可，如果没有效果，试试 hexo clean 再重新生成
+
+## 添加百度分析
+
+登陆[百度统计](https://tongji.baidu.com/web/10000256460/welcome/login)
+
+进入个人页，选择侧栏的代码获取页
+
+可以看到如下一段代码,找到``hm.js?``之后的序列号复制。
+```js
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?复制这段";
+  var s = document.getElementsByTagName("script")[0]; 
+```
+
+填写在next配置里的百度分析字段中：
+```yml
+# Baidu Analytics
+baidu_analytics: 粘贴到这里
+```
+
 
 ##  代码高亮 BUG
 代码高亮只有背景和行号存在， 代码字体本身不变
@@ -206,3 +229,5 @@ p code {
 
 # 参考设计
 [randomyang 的 paper 设计](https://www.randomyang.top/2019/01/27/pixels%E5%B9%B6%E4%B8%8D%E7%AE%80%E5%8D%95/)
+[Next进阶文档](https://theme-next.iissnan.com/third-party-services.html)
+[Next Document](https://theme-next.js.org/docs/)
