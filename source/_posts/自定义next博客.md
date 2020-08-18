@@ -48,11 +48,20 @@ categories:
 - 博客搭建
 ```
 
+
+
+
+
 ##  网易云音乐
 先去网易云音乐里生成外链播放器， 不能生成的可查找特殊方法生成。
 
 在 项目/themes/next/layout/_macro/sidebar.swig 中， 插入复制的代码，比如插入在最下面某一段。
 >注意 20 版本后缀不是 swig，相关文件也不一样
+
+
+
+
+
 
 ## 字数统计和阅读时长
 
@@ -77,6 +86,8 @@ symbols_count_time:
   separated_meta: true
   item_text_post: true
   item_text_total: true
+  awl: 2      #设置2个字符看作一个字
+  wpm: 200    #每分钟阅读字数
 ```
 
 重新生成部署即可，如果没有效果，试试 hexo clean 再重新生成
