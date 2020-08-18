@@ -1,7 +1,10 @@
 ---
 title: 简书博客导入hexo
 date: 2020-07-16 19:02:54
+categories:
+- 工具
 tags:
+- 博客
 ---
 
 # 1. 下载原markdown集

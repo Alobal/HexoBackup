@@ -99,7 +99,7 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/Alobal/Blog.git
+  repo: git@github.com:Alobal/HexoBackup.git
   branch: master
 
 prism_plugin: 

@@ -1,8 +1,10 @@
 ---
 title: 自定义 next 主题博客
 date: 2020-07-15 01:36:25
-categories: 博客搭建
+categories: 
+- 工具
 tags:
+- 博客
 ---
 # 功能性配置
 

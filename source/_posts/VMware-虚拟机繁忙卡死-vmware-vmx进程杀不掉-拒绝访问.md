@@ -1,7 +1,7 @@
 ---
 title: VMware-虚拟机繁忙卡死-vmware-vmx进程杀不掉-拒绝访问
 categories:
-- 语言&&工具
+- 工具
 date: 2020-02-17 02:17:00
 ---
 ##  问题：
