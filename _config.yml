@@ -107,3 +107,9 @@ prism_plugin:
   theme: 'duotone-light' 
   line_number: true 
   # custom_css: 
+
+symbols_count_time:
+	symbols: true
+	time: true
+	total_symbols: true
+	total_time: true

@@ -8,7 +8,7 @@ tags:
 
 ##  站点概览描述
 在项目配置里，第一段填写相关描述，如果是 next 主题，会显示在侧边栏中。
-```python
+```yml
 # Site
 title: Sitch's Blog
 subtitle: ''
@@ -22,7 +22,7 @@ timezone: ''
 在 next 主题配置里，选择下列字段进行注释和取消注释即可启用相关页面，例如分类页和标签页。
 >分类有层级，标签没有层级。
 
-```python
+```yml
 menu:
   home: / || fa fa-home
   #about: /about/ || fa fa-user
@@ -43,7 +43,7 @@ menu:
 - ``type: tags``。
 
 然后在自己的每篇博客描述头中，加入``categories:`` ``tags:``的相关字段，例如这篇：
-```python
+```md
 categories: 
 - 博客搭建
 ```
@@ -54,7 +54,32 @@ categories:
 在 项目/themes/next/layout/_macro/sidebar.swig 中， 插入复制的代码，比如插入在最下面某一段。
 >注意 20 版本后缀不是 swig，相关文件也不一样
 
+## 字数统计和阅读时长
 
+在 next 主题配置文件中搜索 wordcount，可以看到它默认支持的插件是 hexo-symbols-count-time
+
+使用命令行 npm 输入命令进行安装：``npm i hexo-symbols-count-time --save``
+
+项目_config.yml 里追加一段（没追加这一段导致统计为 NaN
+```yml
+symbols_count_time:
+	symbols: true
+	time: true
+	total_symbols: true
+	total_time: true
+```
+
+next 主题 _config.yml 里找到字段 symbols_count_time 按需配置即可：
+```yml
+# Post wordcount display settings
+# Dependencies: https://github.com/theme-next/hexo-symbols-count-time
+symbols_count_time:
+  separated_meta: true
+  item_text_post: true
+  item_text_total: true
+```
+
+重新生成部署即可，如果没有效果，试试 hexo clean 再重新生成
 
 ##  代码高亮 BUG
 代码高亮只有背景和行号存在， 代码字体本身不变
@@ -66,17 +91,15 @@ categories:
 
 **意外的是，prism 设置了 custom_css 的无效路径后，即使 hexo 自带 highlight 是关闭状态，代码高亮居然被 hexo 的 highlight 接管了，除了行号没有一切正常。**
 
-
-
 # 美化性配置
-虽然功能有了，但没人想要自己的博客完全单调扁平，虽然next的设计已经清新的挺舒服了。
+虽然功能有了，但没人想要自己的博客完全单调扁平，虽然 next 的设计已经清新的挺舒服了。
 
 ##  自定义样式，如配色等
 ### 修改方法
 在 next 配置文件中，找到下面这段，然后把需要的自定义样式取消注释，在路径文件中写入你想要**覆盖**的样式。
 **注意是 hexo 项目根目录下的 source/_data/styles.styl**，没有则自己创建。
 **注意不是 next 主题目录下的路径**
-```python
+```yml
 # Define custom file paths.
 # Create your custom files in site directory `source/_data` and uncomment needed files below.
 custom_file_path:
@@ -91,7 +114,7 @@ custom_file_path:
   #mixin: source/_data/mixins.styl
   style: source/_data/styles.styl
 ```
-以下样式修改大多是在styles文件中进行。
+以下样式修改大多是在 styles 文件中进行。
 
 ### 调试样式方法
 虽然能够自定义覆盖样式，但是配色总是要试试的嘛，怎么调试出自己喜欢的配色再添加到文件里呢？
@@ -108,17 +131,16 @@ chrome 打开博客网站，右键你想要更改的元素，例如正文背景�
 ```
 重新生成文章即可，其他浏览器调试应该也是同理，没试过。
 
-
 ## 字体配置
 
-在 next/_config.yml 里，找到 font 字段，一般配置global全局字体就行。
+在 next/_config.yml 里，找到 font 字段，一般配置 global 全局字体就行。
 
-字体CDN默认是google的，可以去里面挑自己喜欢的字体，在family字段配置即可。
+字体 CDN 默认是 google 的，可以去里面挑自己喜欢的字体，在 family 字段配置即可。
 
 个人是比较喜欢思源宋体的。
 
-示例如下:
-```python
+示例如下：
+```yml
 font:
   enable: true
 
@@ -143,7 +165,7 @@ font:
 
 因此考虑添加阴影来增强标题感。
 
-在styles中添加字段如下，具体颜色和大小参数自己配吧。
+在 styles 中添加字段如下，具体颜色和大小参数自己配吧。
 ```css
 .post-body h1, .post-body h2 {
     box-shadow: inset 0 -0.6em 0 #ffeb88; 
@@ -153,7 +175,7 @@ font:
 ## 单句代码悬浮突出配置
 单句代码无论用什么颜色修改感觉都差点意思，要么是太过鲜艳，在频繁的地方看的挺烦，要么是太过暗淡，又不够突出明显。
 
-因此搬运了悬浮贴的css样式。
+因此搬运了悬浮贴的 css 样式。
 
 单句代码和代码块都在``code``类下面，因此最好加个``p``类限制为仅单句代码。
 ```css
@@ -172,4 +194,4 @@ p code {
 ```
 
 # 参考设计
-[randomyang的paper设计](https://www.randomyang.top/2019/01/27/pixels%E5%B9%B6%E4%B8%8D%E7%AE%80%E5%8D%95/)
+[randomyang 的 paper 设计](https://www.randomyang.top/2019/01/27/pixels%E5%B9%B6%E4%B8%8D%E7%AE%80%E5%8D%95/)
