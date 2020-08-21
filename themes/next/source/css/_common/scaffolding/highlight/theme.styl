@@ -117,7 +117,24 @@ if ($highlight-theme == 'night') {
     color: $highlight-comment,
     bg-color: $highlight-background
   };
-} else {
+} else if ($highlight-theme == 'myLight') {
+  $highlight-background   = #fffbef;
+  $highlight-current-line = #efefef;
+  $highlight-selection    = #d6d6d6;
+  $highlight-foreground   = #4d4d4c;
+  $highlight-comment      = #8e908c;
+  $highlight-red          = #c82829;
+  $highlight-orange       = #f5871f;
+  $highlight-yellow       = #eab700;
+  $highlight-green        = #718c00;
+  $highlight-aqua         = #3e999f;
+  $highlight-blue         = #4271ae;
+  $highlight-purple       = #8959a8;
+  $highlight-gutter       = {
+    color: #2311b0,
+    bg-color: #faf5e5
+  };
+}  else {
   $highlight-background   = #f7f7f7;
   $highlight-current-line = #efefef;
   $highlight-selection    = #d6d6d6;

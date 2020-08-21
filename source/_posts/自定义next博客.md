@@ -199,7 +199,7 @@ sitemap:
 
 好吧也不是那么香，prism 的语法提示挺简陋的。.. 烦到，这个坑好大 (╯‵□′)╯︵┻━┻
 
-被简陋到，改回highlight了，不知道为啥高亮又可以用了，但是觉得next的几款highlight都不太搭白底网站，于是摸了一遍发现``themes\next\source\css\_common\scaffolding\highlight\themes.styl``路径文件存储着几套主题的配色，可以自己改一套喜欢的了。
+被简陋到，改回highlight了，不知道为啥高亮又可以用了，但是觉得next的几款highlight都不太搭白底网站，于是摸了一遍发现``themes\next\source\css\_common\scaffolding\highlight\``路径下的文件存储着几套主题的配色，可以自己改一套喜欢的了。
 
 # 美化性配置
 虽然功能有了，但没人想要自己的博客完全单调扁平，虽然 next 的设计已经清新的挺舒服了。
