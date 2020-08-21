@@ -1,5 +1,5 @@
 ---
-title: 今日阅读：The Guardian 1
+title: 阅读：Drop Death
 date: 2020-08-20 08:30:20
 categories:
 - 英语
@@ -46,6 +46,8 @@ The group’s leader, Mohammed Emwazi, was killed in a US drone strike in 2015, 
 Nicholas Henin, a former French Isis hostage, welcomed the news that the death penalty would be dropped, saying on Twitter it was “great news that opens the way for a trial in the US”.
 
 Nicholas Henin，一个曾被法国 Isis 劫持的人质，对这个死刑将被执行的消息感到开心，他在推特上说到：“这是一个为美国审判开辟了新道路的伟大新闻。”
+
+### [阅读原文](https://www.theguardian.com/world/2020/aug/19/us-to-drop-death-penalty-for-british-isis-members-accused-of-beheadings)
 
 # 词汇
 

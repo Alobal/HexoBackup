@@ -45,11 +45,11 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: false
+  enable: true
   line_number: true
-  # auto_detect: false
+  auto_detect: false
   tab_replace: ''
-  wrap: true
+  wrap: false
   hljs: false
 
 # Home page setting
@@ -102,10 +102,16 @@ deploy:
   repo: git@github.com:Alobal/Blog.git
   branch: master
 
-prism_plugin: 
-  mode: 'preprocess' 
-  theme: 'duotone-light' 
-  line_number: true 
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# prism_plugin: 
+#   mode: 'preprocess' 
+#   theme: 'duotone-light' 
+#   line_number: true 
   # custom_css: 
 
 symbols_count_time:
