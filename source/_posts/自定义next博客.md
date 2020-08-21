@@ -6,13 +6,37 @@ categories:
 tags:
 - 博客
 ---
+
+# 前情提要
+
+- Next 7.8.0
+- hexo 4.2.1
+- npm 6.14.5
+- Next 配置文件指 项目根目录/themes/next/_config.yml
+- 项目配置文件指 项目根目录/_config.yml
+- 注意在配置文件中配置字段时，请严格控制缩进
+- 安装命令没特别说明都在 项目根目录 下进行
+
+Next 在 2020 更新了它的母仓库，由于原仓库的管理人员跑路玩失踪，没人理想提交更新的大大，于是他自己重新开了一个 2020 Next 8.0.0 版本的库。..
+
+不过我刚入坑的时候试了下 8.0 版本，发现有些配置文件都改了。. 找不到对应的教程。而之前版本的教程更加详细丰富，因此我还是用了 7.8 版本。
+
+以下所有配置都建立在 7.8 版本的基础之上实现的，保新保质，绝对不是复制偷搬那些祖传博客。
+
+在吗？吐槽无数遍，2020 的人为什么写博客还抄的 Next4.0 版本<( ‵□′)>───就算你不想用 2020 大改版的版本，好歹和我一样用个 7.8 吧！！至少来个 7.0+吧孩子们！！退一万步 6.0+也是可以的啊！！哇的一声吼出来！！
+
+>^_^ 友情建议：进行较大更改之前，先通过如 ``git`` 等方式进行保存。并且更改后为了避免样式不刷新，尽量先``hexo clean``清除样式。生成后最好先在本地``hexo s``部署。确认没有千疮百孔再推到线上吧。
+
 # 功能性配置
+ 
 
 一些比较常规的功能性配置 Next 文档里都有的。
 
 虽然是英文文档，虽然可能和你的版本有一点点不同，但它是基本跟着最新版本，是真的好用！！（怒吼
 
 比起网上到处炒几年前的旧版本冷饭有用多了！！！
+
+另外可以多摸摸 Next 配置文件，里面注释写的蛮详细的，有些东西看注释就知道能开启什么功能，当然，有很多功能需要额外插件支持。
 
 [Next 官方手册](https://theme-next.js.org/docs/)
 
@@ -28,12 +52,35 @@ author: Sitch
 language: zh-CN
 timezone: ''
 ```
+
+## 配置头像
+在 Next 配置文件下找到 ``avatar``字段，有如下配置项：
+
+```yml
+# Sidebar Avatar
+avatar:
+  # Replace the default image and set the url here. 你的头像图片路径
+  url: /images/avatar.png
+  # If true, the avatar will be dispalyed in circle. 要不要圆化
+  rounded: false
+  # If true, the avatar will be rotated with the cursor. 要不要在指针悬停时旋转头像
+  rotated: false
+```
+
+如上给了个示例路径，然后将头像放在 **主题**目录下的 source/images/avatar.png 即可。
+
+另外两个属性可以按需配置。
+
+重新生成部署网站，瞅瞅你的大头照吧。
+
+>头像图片大小没关系，会自动缩放，但是比例不变，即使圆化也会变成椭圆。因此请注意图片比例最好是正方形，美观。
+
 ## Next 的分类和标签
 在 next 主题配置里，选择下列字段进行注释和取消注释即可启用相关页面，例如分类页和标签页。
 >分类有层级，标签没有层级。
 
 ```yml
-menu:
+menu: # 子链接 || font-font awesome 图标
   home: / || fa fa-home
   #about: /about/ || fa fa-user
   #tags: /tags/ || fa fa-tags
@@ -63,6 +110,93 @@ categories:
 
 在 项目/themes/next/layout/_macro/sidebar.swig 中， 插入复制的代码，比如插入在最下面某一段。
 >注意 2020 版本后缀不是 swig，相关文件也不一样
+
+## 导入豆瓣评价页面
+
+个人博客肯定想记录点自己生活向的东西，看过的电影，玩过的游戏就是一个很好的记录对象。
+
+之前我是用 markdown 写了个文本条目性质的，不说难看吧，但起码豆瓣条目自带一些影片介绍信息。..
+
+### 安装 hexo-douban 插件
+
+命令行输入
+```shell
+npm install hexo-douban --save
+```
+
+将下面的配置写入**项目**配置文件：
+
+```yml
+douban: #不想启用的页面注释掉即可
+  user: 豆瓣 id  
+  builtin: false  #是否将生成豆瓣页面功能嵌入到 hexo s 和 hexo g
+  book:
+    title: 'This is my book title'  #页面标题
+    quote: 'This is my book quote'  #页面序言
+  movie:
+    title: 'This is my movie title'
+    quote: 'This is my movie quote'
+  game:
+    title: 'This is my game title'
+    quote: 'This is my game quote'
+  timeout: 10000 #爬取豆瓣数据的超时时间，别管了
+```
+
+豆瓣id可以在进入你的豆瓣个人主页，观察网址获得。通常为：
+
+```
+https://www.douban.com/people/你的id/
+```
+
+### hexo douban 命令
+
+用法如下：
+
+```yml
+Usage: 命令行输入 hexo douban
+
+Description:
+爬取生成豆瓣相关页面
+
+Options: #默认参数 -bgm
+  -b, --books   Generate douban books only
+  -g, --games   Generate douban games only
+  -m, --movies  Generate douban movies only
+  -h，显示帮助
+```
+
+### 使用方法
+
+- ``hexo douban ``生成相关页面再进行部署。
+- builtin 开启时，直接 hexo s 和 hexo g 即包含生成过程。
+
+>注意安装了hexo-douban之后，我们多了个``hexo douban``的命令，因此不能再用``hexo d``作为``hexo deploy``的缩写了。
+
+
+### 开个主页栏
+
+生成部署后就可以通过``/主网址/movies``类似的形式访问了，但这样显然不方便，因此我们开个主页栏给它。
+
+和之前开启分类页一样，在**主题**配置文件中，找到 menu 字段，添加相应的值，如下以movies举例进行修改：
+
+```yml
+menu: # 子链接 || font-font awesome 图标
+  home: / || fa fa-home
+  #about: /about/ || fa fa-user
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
+  movies: /movies/ || fa fa-film  #添加了movies页
+  #schedule: /schedule/ || fa fa-calendar
+  #sitemap: /sitemap.xml || fa fa-sitemap
+  #commonweal: /404/ || fa fa-heartbeat
+
+```
+
+但是这样开启之后，显示的是movies ，想改成中文显示需要在``主题目录/languages/zh-CN``中配置一下，自己打开看看就懂得怎么配了，懒得贴实例了哈=。=
+
+### 参考资料
+[hexo-douban 文档](https://github.com/mythsman/hexo-douban)
 
 ## 字数统计和阅读时长
 
@@ -155,7 +289,7 @@ Goolge 推荐验证方法是下载 HTML 文件。但是，我们不用。毕竟�
 
 验证成功后可以 Google 搜索``site: 你的网址``试试，理应看到你的博客网址。
 
->这里很多看很多博客都是在抄几年前的方法，明明 2020 了啊哥哥们，Next 已经传宗接代到 8.0+了！！已经有内置``google-site-verification``字段了！！
+>这里很多看很多博客都是在抄几年前的方法，明明 2020 了啊哥哥们，Next 已经传宗接代到 8.0 了！！已经有内置``google-site-verification``字段了！！
 >
 >明明限制了搜索时间是半年以内，结果 2020 年这群人写的教程还是抄的 10 年的东西看着好烦啊喂！！！！！！！！！！！！！！
 
@@ -199,14 +333,15 @@ sitemap:
 
 好吧也不是那么香，prism 的语法提示挺简陋的。.. 烦到，这个坑好大 (╯‵□′)╯︵┻━┻
 
-被简陋到，改回highlight了，不知道为啥高亮又可以用了，但是觉得next的几款highlight都不太搭白底网站，于是摸了一遍发现``themes\next\source\css\_common\scaffolding\highlight\``路径下的文件存储着几套主题的配色，可以自己改一套喜欢的了。
+被简陋到，改回 highlight 了，不知道为啥高亮又可以用了，但是觉得 next 的几款 highlight 都不太搭白底网站，于是摸了一遍发现``themes\next\source\css\_common\scaffolding\highlight\``路径下的文件存储着几套主题的配色，可以自己改一套喜欢的了。
 
 # 美化性配置
 虽然功能有了，但没人想要自己的博客完全单调扁平，虽然 next 的设计已经清新的挺舒服了。
 
 ##  自定义样式，如配色等
 ### 修改方法
-在 next 配置文件中，找到下面这段，然后把需要的自定义样式取消注释，在路径文件中写入你想要**覆盖**的样式。
+在 next 配置文件中，找到下面这段，然后把需要的自定义字段取消注释，这里我们想要自定义 style，因此取消注释 style 字段，之后可以在路径文件中写入你想要**覆盖**的样式。
+
 **注意是 hexo 项目根目录下的 source/_data/styles.styl**，没有则自己创建。
 **注意不是 next 主题目录下的路径**
 ```yml
