@@ -303,7 +303,7 @@ p code {
 }
 ```
 
-# 参考设计
+# 参考资料
 [randomyang 的 paper 设计](https://www.randomyang.top/2019/01/27/pixels%E5%B9%B6%E4%B8%8D%E7%AE%80%E5%8D%95/)
 [Next 进阶文档](https://theme-next.iissnan.com/third-party-services.html)
 [Next Document](https://theme-next.js.org/docs/)
