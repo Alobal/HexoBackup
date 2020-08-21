@@ -8,6 +8,14 @@ tags:
 ---
 # 功能性配置
 
+一些比较常规的功能性配置 Next 文档里都有的。
+
+虽然是英文文档，虽然可能和你的版本有一点点不同，但它是基本跟着最新版本，是真的好用！！（怒吼
+
+比起网上到处炒几年前的旧版本冷饭有用多了！！！
+
+[Next 官方手册](https://theme-next.js.org/docs/)
+
 ##  站点概览描述
 在项目配置里，第一段填写相关描述，如果是 next 主题，会显示在侧边栏中。
 ```yml
@@ -50,20 +58,11 @@ categories:
 - 博客搭建
 ```
 
-
-
-
-
 ##  网易云音乐
 先去网易云音乐里生成外链播放器， 不能生成的可查找特殊方法生成。
 
 在 项目/themes/next/layout/_macro/sidebar.swig 中， 插入复制的代码，比如插入在最下面某一段。
 >注意 2020 版本后缀不是 swig，相关文件也不一样
-
-
-
-
-
 
 ## 字数统计和阅读时长
 
@@ -78,7 +77,7 @@ symbols_count_time:
 	time: true
 	total_symbols: true
   total_time: true
-  awl: 2      #设置2个字符看作一个字
+  awl: 2      #设置 2 个字符看作一个字
   wpm: 200    #每分钟阅读字数
 ```
 
@@ -97,21 +96,21 @@ symbols_count_time:
 
 ## 添加百度分析
 
-登陆[百度统计](https://tongji.baidu.com/web/10000256460/welcome/login)
+登陆 [百度统计](https://tongji.baidu.com/web/10000256460/welcome/login)
 
 进入个人页，选择侧栏的代码获取页
 
-可以看到如下一段代码,找到``hm.js?``之后的序列号复制。
+可以看到如下一段代码，找到``hm.js?``之后的序列号复制。
 ```js
 <script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?复制这段";
+  hm.src = "https://hm.baidu.com/hm.js? 复制这段";
   var s = document.getElementsByTagName("script")[0]; 
 ```
 
-填写在next配置里的百度分析字段中：
+填写在 next 配置里的百度分析字段中：
 ```yml
 # Baidu Analytics
 baidu_analytics: 粘贴到这里
@@ -119,14 +118,73 @@ baidu_analytics: 粘贴到这里
 
 之后等待一段时间就可以去百度分析主页看网站情况啦。
 
-然后你就能开心地发现几天，几十天，几百天，访问量蹭蹭蹭的涨，访问ip一直都只有1个hhhh。
+然后你就能开心地发现几天，几十天，几百天，访问量蹭蹭蹭的涨，访问 ip 一直都只有 1 个 hhhh。
 
 嗯，其实在被搜索引擎收录之前别人是搜不到你的博客的。
 
-请捞一捞下面的Google收录方法。
+请捞一捞下面的 Google 收录方法。
 
-## Google收录
+## Google 收录
 
+以 Next 主题为例
+
+登录 [Google Search Console](https://search.google.com/search-console/)
+
+>当然，没有账号的话需要自己搞好 Google 账号
+
+### 选择资源类型
+
+我是 GitHub Pages 域名的个人网站，所以选右边的单网址的资源类型。把博客网址复制过去即可创建资源。
+
+### 验证网站所有权
+Goolge 推荐验证方法是下载 HTML 文件。但是，我们不用。毕竟一个``hexo clean``网页就没了。..
+
+选下面的 HTML 标记验证，可以看到形如下面的一段代码。
+
+```html
+<meta name="google-site-verification" content="XXXXXXXXXXXXXXXXXXXXXXX">
+```
+
+把 xxxx 的东西复制好。
+
+打开 Next 的配置文件，搜索到``google_site_verification``字段，把复制的字段填进去就好。
+
+``hexo clean;hexo g;hexo d``一套刷新网站组合拳。
+
+回刚才的 Google 家里点击进行验证即可。
+
+验证成功后可以 Google 搜索``site: 你的网址``试试，理应看到你的博客网址。
+
+>这里很多看很多博客都是在抄几年前的方法，明明 2020 了啊哥哥们，Next 已经传宗接代到 8.0+了！！已经有内置``google-site-verification``字段了！！
+>
+>明明限制了搜索时间是半年以内，结果 2020 年这群人写的教程还是抄的 10 年的东西看着好烦啊喂！！！！！！！！！！！！！！
+
+### 添加站点地图 SiteMap
+
+站点地图可以将我们网站的组织架构提供给 Google，都是为了搜索优化==
+
+安装 hexo 自动生成站点地图的插件：
+
+``npm install hexo-generator-sitemap --save``
+
+安装成功后在项目配置文件中添加：
+
+```yml
+sitemap:
+  path: sitemap.xml
+```
+
+这样插件每次会在``hexo g``时自动生成 sitemap.xml 文件，放在/public/下面。
+
+>注意博客文件名带有``&``时，生成的 sitemap.xml 会有错误，我的解决办法是修改文件名。
+
+其实我们也知道每次部署出去的网站也就是/public/目录，所以 sitemap.xml 相当于放在网站根目录下面。
+
+因此我们把``你的网站地址/sitemap.xml``这个链接提交给 Google 即可。
+
+执行``hexo g;hexo d``生成 sitemap 并部署出去。
+
+在 [Google SearchConsole](https://search.google.com/search-console/sitemaps/) 侧栏找到站点地图，提交上面说的链接，完毕。
 
 ##  代码高亮 BUG
 代码高亮只有背景和行号存在， 代码字体本身不变
@@ -135,11 +193,13 @@ baidu_analytics: 粘贴到这里
 
 >正确配置了项目设置里的 highlight 字段，和 next 主题设置里的 codeblock 风格
 
-跑了跑了连夜跑了 ，隔壁prism-plugin真香。
+跑了跑了连夜跑了 ，~~隔壁 prism-plugin 真香~~。
 
->意外的是，prism 设置了 custom_css 的无效路径后，即使 hexo 自带 highlight 是关闭状态，代码高亮居然被 hexo 的 highlight 接管了，除了行号没有一切正常。当然，要正常使用还是用prism吧。
+>意外的是，prism 设置了 custom_css 的无效路径后，即使 hexo 自带 highlight 是关闭状态，代码高亮居然被 hexo 的 highlight 接管了，除了行号没有一切正常。当然，要正常使用还是用 prism 吧。
 
-好吧也不是那么香，prism的语法提示挺简陋的...烦到，这个坑好大(╯‵□′)╯︵┻━┻
+好吧也不是那么香，prism 的语法提示挺简陋的。.. 烦到，这个坑好大 (╯‵□′)╯︵┻━┻
+
+被简陋到，改回highlight了，不知道为啥高亮又可以用了，但是觉得next的几款highlight都不太搭白底网站，于是摸了一遍发现``themes\next\source\css\_common\scaffolding\highlight\themes.styl``路径文件存储着几套主题的配色，可以自己改一套喜欢的了。
 
 # 美化性配置
 虽然功能有了，但没人想要自己的博客完全单调扁平，虽然 next 的设计已经清新的挺舒服了。
@@ -245,5 +305,5 @@ p code {
 
 # 参考设计
 [randomyang 的 paper 设计](https://www.randomyang.top/2019/01/27/pixels%E5%B9%B6%E4%B8%8D%E7%AE%80%E5%8D%95/)
-[Next进阶文档](https://theme-next.iissnan.com/third-party-services.html)
+[Next 进阶文档](https://theme-next.iissnan.com/third-party-services.html)
 [Next Document](https://theme-next.js.org/docs/)

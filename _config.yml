@@ -102,12 +102,6 @@ deploy:
   repo: git@github.com:Alobal/Blog.git
   branch: master
 
-prismjs:
-  enable: false
-  preprocess: true
-  line_number: true
-  tab_replace: ''
-
 # prism_plugin: 
 #   mode: 'preprocess' 
 #   theme: 'duotone-light' 
@@ -121,3 +115,6 @@ symbols_count_time:
 	total_time: true
   awl: 2
   wpm: 200
+
+sitemap:
+  path: sitemap.xml
