@@ -121,12 +121,12 @@ sitemap:
 
 douban: #不想启用的页面注释掉即可
   user: 221941333  
-  builtin: true  #是否将生成豆瓣页面功能嵌入到 hexo s 和 hexo g
+  builtin: false  #是否将生成豆瓣页面功能嵌入到 hexo s 和 hexo g
   book:
     title: 'This is my book title'  #页面标题
     quote: 'This is my book quote'  #页面序言
   movie:
-    title: 'Movie'
+    title: '沉浸你的世界'
     quote: '看影片是一种享受，电影动画动漫。每次一小片段时光，穿越到另一段时空体验一段紧凑发展的故事 ，文以载道，还是单纯视觉享受，都是一样的美好。'
   game:
     title: '第九艺术陈列柜'

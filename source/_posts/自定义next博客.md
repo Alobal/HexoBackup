@@ -27,6 +27,8 @@ Next 在 2020 更新了它的母仓库，由于原仓库的管理人员跑路玩
 
 >^_^ 友情建议：进行较大更改之前，先通过如 ``git`` 等方式进行保存。并且更改后为了避免样式不刷新，尽量先``hexo clean``清除样式。生成后最好先在本地``hexo s``部署。确认没有千疮百孔再推到线上吧。
 
+ <!-- more --> 
+
 # 功能性配置
  
 
@@ -142,10 +144,10 @@ douban: #不想启用的页面注释掉即可
   timeout: 10000 #爬取豆瓣数据的超时时间，别管了
 ```
 
-豆瓣id可以在进入你的豆瓣个人主页，观察网址获得。通常为：
+豆瓣 id 可以在进入你的豆瓣个人主页，观察网址获得。通常为：
 
 ```
-https://www.douban.com/people/你的id/
+https://www.douban.com/people/你的 id/
 ```
 
 ### hexo douban 命令
@@ -170,14 +172,13 @@ Options: #默认参数 -bgm
 - ``hexo douban ``生成相关页面再进行部署。
 - builtin 开启时，直接 hexo s 和 hexo g 即包含生成过程。
 
->注意安装了hexo-douban之后，我们多了个``hexo douban``的命令，因此不能再用``hexo d``作为``hexo deploy``的缩写了。
-
+>注意安装了 hexo-douban 之后，我们多了个``hexo douban``的命令，因此不能再用``hexo d``作为``hexo deploy``的缩写了。
 
 ### 开个主页栏
 
 生成部署后就可以通过``/主网址/movies``类似的形式访问了，但这样显然不方便，因此我们开个主页栏给它。
 
-和之前开启分类页一样，在**主题**配置文件中，找到 menu 字段，添加相应的值，如下以movies举例进行修改：
+和之前开启分类页一样，在**主题**配置文件中，找到 menu 字段，添加相应的值，如下以 movies 举例进行修改：
 
 ```yml
 menu: # 子链接 || font-font awesome 图标
@@ -186,14 +187,14 @@ menu: # 子链接 || font-font awesome 图标
   tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
-  movies: /movies/ || fa fa-film  #添加了movies页
+  movies: /movies/ || fa fa-film  #添加了 movies 页
   #schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
 
 ```
 
-但是这样开启之后，显示的是movies ，想改成中文显示需要在``主题目录/languages/zh-CN``中配置一下，自己打开看看就懂得怎么配了，懒得贴实例了哈=。=
+但是这样开启之后，显示的是 movies ，想改成中文显示需要在``主题目录/languages/zh-CN``中配置一下，自己打开看看就懂得怎么配了，懒得贴实例了哈=。=
 
 ### 参考资料
 [hexo-douban 文档](https://github.com/mythsman/hexo-douban)
@@ -227,6 +228,19 @@ symbols_count_time:
 ```
 
 重新生成部署即可，如果没有效果，试试 hexo clean 再重新生成
+
+## 首页摘要 阅读全文
+
+如果你是找了半天博客，发现他们都说 Next 自带自动摘要功能，但自己这就是不起作用的时候，恭喜你，和我一起把那些馊饭博客砸了吧。
+
+7.6 以后的 Next 删除了自动摘要功能，原因是它觉得它负担了太多。..
+
+我 7.8 的 Next 配置文件里只有个``excerpt_description``，这个功能是自动将博客头描述里的``description``字段当作摘要。
+
+所以现在首页摘要只有两种办法：
+
+- 为每个博客写好 description
+- 在博客中间手动添加`` <!-- more --> ``以截断
 
 ## 添加百度分析
 
@@ -338,6 +352,12 @@ sitemap:
 # 美化性配置
 虽然功能有了，但没人想要自己的博客完全单调扁平，虽然 next 的设计已经清新的挺舒服了。
 
+修改途径有两种：
+- 自定义 style 文件，覆盖样式，一般用于修改颜色等
+
+- 修改``next\source\css\``下的文件，一般用于修改文章宽度，文章颜色等整体性的 css.
+  >注意我自己在这里面的文件配置的时候发现，这里颜色只支持十六进制表示法，不支持 rgb 表示。..
+
 ##  自定义样式，如配色等
 ### 修改方法
 在 next 配置文件中，找到下面这段，然后把需要的自定义字段取消注释，这里我们想要自定义 style，因此取消注释 style 字段，之后可以在路径文件中写入你想要**覆盖**的样式。
@@ -360,6 +380,8 @@ custom_file_path:
   style: source/_data/styles.styl
 ```
 以下样式修改大多是在 styles 文件中进行。
+
+>有些属性，像文章宽度，在``next\source\css\_variables``目录下的文件中修改，注意相应主题的文件会覆盖 base 文件。其中的字段意义大概看看英语就能懂，或者在页面 F12 调试的时候看看。
 
 ### 调试样式方法
 虽然能够自定义覆盖样式，但是配色总是要试试的嘛，怎么调试出自己喜欢的配色再添加到文件里呢？
@@ -437,6 +459,36 @@ p code {
     vertical-align: bottom;
 }
 ```
+
+## 修改文章页面宽度
+在``next\source\css\_variables``中找到对应子主题文件的如下字段：
+```s
+$content-desktop              = 'calc(100% - %s)' % unit($content-desktop-padding / 2, 'px');
+$content-desktop-large        = 900px;
+$content-desktop-largest      = 61%;
+```
+
+如果子主题文件没有，可以去``base.styl``里找。
+
+或者自己在子主题文件里添加这个字段。
+
+至于相应的值就自己调试成自己舒服的了。
+
+
+>小提示：``hexo s``部署在本地后，可以直接修改这些 styl 文件，刷新页面即生效，不需要中断本地服务器。
+
+## 修改文章背景色及透明度
+
+在``next\source\css\_variables``中找到对应子主题文件的如下字段：
+```s
+$content-bg-color             =#ffffffc2;
+```
+
+如果子主题文件没有，可以去``base.styl``里找。
+
+或者自己在子主题文件里添加这个字段。
+
+值也自己调咯，推荐透明度在0.9左右。
 
 # 参考资料
 [randomyang 的 paper 设计](https://www.randomyang.top/2019/01/27/pixels%E5%B9%B6%E4%B8%8D%E7%AE%80%E5%8D%95/)

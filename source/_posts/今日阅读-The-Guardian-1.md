@@ -19,6 +19,8 @@ The pledge was given in a letter from the US attorney general, William Barr, to 
 
 这个承诺是在美国总检察长 William Barr，致英国内政大臣 Priti Patel 的一封信中作出的。此时在去年十月被 Syrian Kurds 逮捕并转送至美国押守的，英国 Isis 的披头士团成员 Alexanda Kotey 和 El Shafee Elsheikh，他们仍然被拘留在一处美国海外设施中。
 
+ <!-- more --> 
+
 Barr’s offer came with an ultimatum: if the UK failed to hand over evidence in the case by 15 October, the two detainees would be handed over to the Iraqi justice system.
 
 Barr 的最终通牒：如果英国不在 10 月 15 之前转交证据，两名被拘留者将会被移交至伊拉克司法系统。

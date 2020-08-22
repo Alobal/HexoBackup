@@ -3,16 +3,18 @@
 
 // Settings for some of the most global styles.
 // --------------------------------------------------
-$body-bg-color                = #f5f7f9;
+$body-bg-color                = #fffff;
 
 $sidebar-width                = hexo-config('sidebar.width') is a 'unit' ? hexo-config('sidebar.width') : 240;
 $sidebar-desktop              = unit($sidebar-width, 'px');
 $content-wrap                 = 'calc(100% - %s)' % unit($sidebar-width + $sidebar-offset, 'px');
 
 $content-desktop              = 'calc(100% - %s)' % unit($content-desktop-padding / 2, 'px');
-$content-desktop-large        = 1160px;
-$content-desktop-largest      = 73%;
+$content-desktop-large        = 900px;
+$content-desktop-largest      = 66%;
 
+//文章背景色
+$content-bg-color             =#ffffffc2;
 
 // Borders
 // --------------------------------------------------
@@ -66,3 +68,6 @@ $btn-default-hover-color      = white;
 $b2t-opacity                  = .6;
 $b2t-position-bottom          = -100px;
 $b2t-position-bottom-on       = 30px;
+
+
+

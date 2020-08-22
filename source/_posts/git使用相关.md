@@ -34,6 +34,7 @@ git config remote.origin.url git@github.com:你的仓库地址
 
 试着``git push``一下=。=
 
+ <!-- more --> 
 
 ## 存在SSH密钥，但访问GitHub时Permission denied (publickey)
 

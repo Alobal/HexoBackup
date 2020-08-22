@@ -18,6 +18,8 @@ Staff, police and volunteers used sandbags to try to protect the 71-metre (233ft
 
 这是自 1949 年以来浑浊的洪水第一次弥漫到佛脚，工作人员，警察，志愿者利用沙袋试图保护 71 米高 (233 英尺）的乐山大佛，它是一个在四川西南部的联合国教科文组织认定的世界文化遗产。
 
+ <!-- more --> 
+
 However, the worst of the flooding appeared to be over in Sichuan by Wednesday when the emergency level was lowered and the toes of a famous **Buddhist** statue **re-emerged** as waters receded.
 
 然而，到了周三洪泛最恶劣的阶段似乎快要结束了。此时紧戒等级降低，并且随着退水大佛像的脚趾也重现露了出来。
