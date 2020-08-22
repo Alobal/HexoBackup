@@ -117,7 +117,7 @@ darkmode: false
 # External url should start with http:// or https://
 menu: # 子链接 || font-font awesome 图标
   home: / || fa fa-home
-  #about: /about/ || fa fa-user
+  about: /about/ || fa fa-user
   tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
