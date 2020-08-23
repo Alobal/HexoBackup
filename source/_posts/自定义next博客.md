@@ -334,6 +334,32 @@ sitemap:
 
 在 [Google SearchConsole](https://search.google.com/search-console/sitemaps/) 侧栏找到站点地图，提交上面说的链接，完毕。
 
+
+## 站内本地搜索
+
+安装插件:
+
+```s
+npm install hexo-generator-searchdb --save
+```
+
+编辑**项目**配置文件，新增字段:
+```yml
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+```
+
+编辑**主题**配置文件，修改字段：
+```yml
+# Local search
+local_search:
+  enable: true
+```
+
+
 ##  代码高亮 BUG
 代码高亮只有背景和行号存在， 代码字体本身不变
 
@@ -491,5 +517,6 @@ $content-bg-color             =#ffffffc2;
 
 # 参考资料
 [randomyang 的 paper 设计](https://www.randomyang.top/2019/01/27/pixels%E5%B9%B6%E4%B8%8D%E7%AE%80%E5%8D%95/)
-[Next 进阶文档](https://theme-next.iissnan.com/third-party-services.html)
+[co5=Shioko个人博客](https://co5.me/)
 [Next Document](https://theme-next.js.org/docs/)
+[Next 中文入门文档](http://theme-next.iissnan.com/)
