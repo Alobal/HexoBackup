@@ -1,6 +1,6 @@
 ---
-title: Next 7.8 美化性配置
-date: 2020-08-24 20:19:42
+title: Hexo+Next7.8 美化性配置
+date: 2020-07-24 20:19:42
 categories:
 - 工具
 tags:
@@ -220,3 +220,5 @@ $content-bg-color             =#ffffffc2;
 [randomyang 的 paper 设计](https://www.randomyang.top/2019/01/27/pixels%E5%B9%B6%E4%B8%8D%E7%AE%80%E5%8D%95/)
 
 [co5=Shioko 个人博客](https://co5.me/)
+
+[千灵](https://qianling.pw/)

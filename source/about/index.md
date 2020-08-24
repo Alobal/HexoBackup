@@ -2,6 +2,7 @@
 title: about
 date: 2020-08-23 00:02:07
 type: about
+comments: false
 ---
 
 诶嘿，这个坑还没填ԅ(¯﹃¯ԅ)。暂时附送一首终末之诗好了

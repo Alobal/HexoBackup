@@ -1,6 +1,6 @@
 ---
-title: 自定义 next 主题博客
-date: 2020-08-23 01:36:25
+title: Hexo+Next7.8 功能性配置
+date: 2020-07-23 01:36:25
 categories: 
 - 工具
 tags:
@@ -357,6 +357,94 @@ local_search:
   enable: true
 ```
 
+## 评论系统 Valine
+
+>“会有人讨论吗？”——好的，回来填评论系统的坑了。
+
+Next支持多评论系统同时存在 ... 虽然我不知道哪个憨憨会同时装躲个评论系统，评论数据又不能共享。
+
+Next内建支持很多评论系统，我选择了在国内支持比较友好的Valine。
+
+可以跟着 Next 官方教程做，当然不愿意看英文也无所谓，欢迎继续跟着我~
+
+[Next-Valine](https://theme-next.js.org/docs/third-party-services/comments.html)
+
+### [LeanCloud 注册登录](https://leancloud.cn/dashboard/login.html#/signin)
+
+没啥好说的，Valine使用了LeanCloud作为数据段，因此去LeanCloud注册登录就行，然后创建应用。
+
+虽然这个注册需要实名制 ... 有点小小小在意。
+
+### 获取 ID 和 Key
+
+进入创建好的应用，选择``设置->应用 Keys``子页，复制``APP ID ``和``App Key``。
+
+### Next 配置
+在**主题**配置文件中搜索 comments,找到字段如下，这里基本不用修改，按需看注释选择配置吧：
+```yml
+# Multiple Comment System Support
+comments:
+  # Available values: tabs | buttons
+  style: tabs
+  # Choose a comment system to be displayed by default.
+  # Available values: changyan | disqus | disqusjs | gitalk | livere | valine
+  active: valine
+  # Setting `true` means remembering the comment system selected by the visitor.
+  storage: true
+  # Lazyload all comment systems.
+  lazyload: false
+  # Modify texts or order for any navs, here are some examples.
+  nav:
+    #disqus:
+    #  text: Load Disqus
+    #  order: -1
+    #gitalk:
+    #  order: -2
+```
+
+
+在**主题**配置文件中搜索 valine ，找到相应的字段如下：
+
+```yml
+valine:
+  enable: false
+  appid: #你的APPID
+  appkey: #你的APPkey
+  notify: false # 邮件提醒
+  verify: false # 验证码
+  placeholder: 欢迎用你的脸滚一滚键盘~  #评论输入框预置文字
+  avatar: mm # Gravatar style
+  guest_info: nick,mail,link # 自定义评论区头部
+  pageSize: 10 # 分页限制大小
+  language: # 语言,可用值: en, zh-cn
+  visitor: false # Article reading statistic
+  comment_count: true # If false, comment count will only be displayed in post page, not in home page
+  recordIP: false # 是否记录IP
+  serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
+  #post_meta_order: 0
+```
+
+把 enable 置 true，并且对应粘贴好之前的 AppID 和 AppKey。
+
+重新部署就可以用了，默认为每个页面开启评论系统。
+
+### 页面单独关闭评论
+
+在markdown文件的元数据描述符中，添加``comments: false``，即可在当前页面关闭评论。
+
+>推荐导航栏的那几个导航页都关掉，例如分类页、标签页、关于页。
+
+### 管理评论数据
+
+登录LeanCloud对应应用的管理页面，选择``存储->结构化数据->Comment``，即可看到评论数据，并且可以偷偷行使你的管理权限。
+
+### 拓展插件 valine-admin
+
+[官网地址](https://github.com/zhaojun1998/Valine-Admin)
+
+是个中文教程，写的很详细，我就不重复了。~~我目前没有装它的需求~~
+
+
 ##  代码高亮 BUG
 代码高亮只有背景和行号存在， 代码字体本身不变
 
@@ -371,8 +459,6 @@ local_search:
 好吧也不是那么香，prism 的语法提示挺简陋的。.. 烦到，这个坑好大 (╯‵□′)╯︵┻━┻
 
 被简陋到，改回 highlight 了，不知道为啥高亮又可以用了，但是觉得 next 的几款 highlight 都不太搭白底网站，于是摸了一遍发现``themes\next\source\css\_common\scaffolding\highlight\``路径下的文件存储着几套主题的配色，可以自己改一套喜欢的了。
-
-
 
 # 参考资料
 [Next Document](https://theme-next.js.org/docs/)
