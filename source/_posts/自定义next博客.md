@@ -1,6 +1,6 @@
 ---
 title: 自定义 next 主题博客
-date: 2020-07-15 01:36:25
+date: 2020-08-23 01:36:25
 categories: 
 - 工具
 tags:
@@ -334,16 +334,14 @@ sitemap:
 
 在 [Google SearchConsole](https://search.google.com/search-console/sitemaps/) 侧栏找到站点地图，提交上面说的链接，完毕。
 
-
 ## 站内本地搜索
 
-安装插件:
-
+安装插件：
 ```s
 npm install hexo-generator-searchdb --save
 ```
 
-编辑**项目**配置文件，新增字段:
+编辑**项目**配置文件，新增字段：
 ```yml
 search:
   path: search.xml
@@ -358,7 +356,6 @@ search:
 local_search:
   enable: true
 ```
-
 
 ##  代码高亮 BUG
 代码高亮只有背景和行号存在， 代码字体本身不变
@@ -375,148 +372,8 @@ local_search:
 
 被简陋到，改回 highlight 了，不知道为啥高亮又可以用了，但是觉得 next 的几款 highlight 都不太搭白底网站，于是摸了一遍发现``themes\next\source\css\_common\scaffolding\highlight\``路径下的文件存储着几套主题的配色，可以自己改一套喜欢的了。
 
-# 美化性配置
-虽然功能有了，但没人想要自己的博客完全单调扁平，虽然 next 的设计已经清新的挺舒服了。
 
-修改途径有两种：
-- 自定义 style 文件，覆盖样式，一般用于修改颜色等
-
-- 修改``next\source\css\``下的文件，一般用于修改文章宽度，文章颜色等整体性的 css.
-  >注意我自己在这里面的文件配置的时候发现，这里颜色只支持十六进制表示法，不支持 rgb 表示。..
-
-##  自定义样式，如配色等
-### 修改方法
-在 next 配置文件中，找到下面这段，然后把需要的自定义字段取消注释，这里我们想要自定义 style，因此取消注释 style 字段，之后可以在路径文件中写入你想要**覆盖**的样式。
-
-**注意是 hexo 项目根目录下的 source/_data/styles.styl**，没有则自己创建。
-**注意不是 next 主题目录下的路径**
-```yml
-# Define custom file paths.
-# Create your custom files in site directory `source/_data` and uncomment needed files below.
-custom_file_path:
-  #head: source/_data/head.swig
-  #header: source/_data/header.swig
-  #sidebar: source/_data/sidebar.swig
-  #postMeta: source/_data/post-meta.swig
-  #postBodyEnd: source/_data/post-body-end.swig
-  #footer: source/_data/footer.swig
-  #bodyEnd: source/_data/body-end.swig
-  #variable: source/_data/variables.styl
-  #mixin: source/_data/mixins.styl
-  style: source/_data/styles.styl
-```
-以下样式修改大多是在 styles 文件中进行。
-
->有些属性，像文章宽度，在``next\source\css\_variables``目录下的文件中修改，注意相应主题的文件会覆盖 base 文件。其中的字段意义大概看看英语就能懂，或者在页面 F12 调试的时候看看。
-
-### 调试样式方法
-虽然能够自定义覆盖样式，但是配色总是要试试的嘛，怎么调试出自己喜欢的配色再添加到文件里呢？
-
-chrome 打开博客网站，右键你想要更改的元素，例如正文背景，在右键菜单中点【检查】，可以看到如图的调试台，右边则是相应的元素样式。如图：
-![主要找右边的样式表](https://wx1.sinaimg.cn/mw1024/b8e57787gy1ggtuquyezgj20wn0di0v3.jpg)
-比如这里我就把正文背景从原来的纯白，修改为了带点暖黄的护眼色。
-然后把更改的这段复制到 styles.styl 即可，如下：
-```css
-//正文背景护眼色
-:root {
-    --body-bg-color: #f9dbb647;
-}
-```
-重新生成文章即可，其他浏览器调试应该也是同理，没试过。
-
-## 字体配置
-
-在 next/_config.yml 里，找到 font 字段，一般配置 global 全局字体就行。
-
-字体 CDN 默认是 google 的，可以去里面挑自己喜欢的字体，在 family 字段配置即可。
-
-个人是比较喜欢思源宋体的。
-
-示例如下：
-```yml
-font:
-  enable: true
-
-  # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
-  host:
-
-  # Font options:
-  # `external: true` will load this font family from `host` above.
-  # `family: Times New Roman`. Without any quotes.
-  # `size: x.x`. Use `em` as unit. Default: 1 (16px)
-
-  # Global font settings used for all elements inside <body>.
-  global:
-    external: true
-    family: Noto Serif SC
-    size:
-```
-
-## 标题阴影配置
-
-标题虽然可以通过字体大小区分，但是光秃秃的几个字在全文里还是有比较混杂的感觉，即不方便分割上下文，也不凸显标题本身。
-
-因此考虑添加阴影来增强标题感。
-
-在 styles 中添加字段如下，具体颜色和大小参数自己配吧。
-```css
-.post-body h1, .post-body h2 {
-    box-shadow: inset 0 -0.6em 0 #ffeb88; 
-}
-```
-
-## 单句代码悬浮突出配置
-单句代码无论用什么颜色修改感觉都差点意思，要么是太过鲜艳，在频繁的地方看的挺烦，要么是太过暗淡，又不够突出明显。
-
-因此搬运了悬浮贴的 css 样式。
-
-单句代码和代码块都在``code``类下面，因此最好加个``p``类限制为仅单句代码。
-```css
-p code {
-    font-size: 1em;
-    line-height: 1.5rem;
-    color: #333;
-    font-weight: bold;
-    border: 1px solid #ebc65a;
-    background: #fff;
-    box-shadow: 0.2em 0.2em 0 0 #ebc65a;
-    padding: 0.1em 0.4em;
-    margin: 0 0.4em;
-    vertical-align: bottom;
-}
-```
-
-## 修改文章页面宽度
-在``next\source\css\_variables``中找到对应子主题文件的如下字段：
-```s
-$content-desktop              = 'calc(100% - %s)' % unit($content-desktop-padding / 2, 'px');
-$content-desktop-large        = 900px;
-$content-desktop-largest      = 61%;
-```
-
-如果子主题文件没有，可以去``base.styl``里找。
-
-或者自己在子主题文件里添加这个字段。
-
-至于相应的值就自己调试成自己舒服的了。
-
->小提示：``hexo s``部署在本地后，可以直接修改这些 styl 文件，刷新页面即生效，不需要中断本地服务器。
-
-## 修改文章背景色及透明度
-
-在``next\source\css\_variables``中找到对应子主题文件的如下字段：
-```s
-$content-bg-color             =#ffffffc2;
-```
-
-如果子主题文件没有，可以去``base.styl``里找。
-
-或者自己在子主题文件里添加这个字段。
-
-值也自己调咯，推荐透明度在 0.9 左右。
 
 # 参考资料
-[randomyang 的 paper 设计](https://www.randomyang.top/2019/01/27/pixels%E5%B9%B6%E4%B8%8D%E7%AE%80%E5%8D%95/)
-[co5=Shioko个人博客](https://co5.me/)
 [Next Document](https://theme-next.js.org/docs/)
 [Next 中文入门文档](http://theme-next.iissnan.com/)
