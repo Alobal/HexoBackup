@@ -344,7 +344,7 @@ npm install hexo-generator-searchdb --save
 编辑**项目**配置文件，新增字段：
 ```yml
 search:
-  path: search.xml
+  path: search.json  #支持json或者xml，默认xml，但我用的有问题，推荐json
   field: post
   format: html
   limit: 10000

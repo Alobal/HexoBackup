@@ -2,13 +2,16 @@
 title: about
 date: 2020-08-23 00:02:07
 type: about
-comments: false
 ---
 
-诶嘿，这个坑还没填ԅ(¯﹃¯ԅ)。暂时附送一首终末之诗好了
+诶嘿，这个坑还没填ԅ(¯﹃¯ԅ)。
+
+暂时附送一首诗好了
 
 
-# <center>[终末之诗](https://minecraft-zh.gamepedia.com/index.php?title=%E7%BB%88%E6%9C%AB%E4%B9%8B%E8%AF%97&variant=zh)</center>
+
+
+## <center>终末之诗</center>
 
 I see the player you mean.
 我看到你所指的那位玩家了。
@@ -237,3 +240,5 @@ You are the player.
 
 Wake up.
 该醒了。
+
+### [终末之诗](https://minecraft-zh.gamepedia.com/index.php?title=%E7%BB%88%E6%9C%AB%E4%B9%8B%E8%AF%97&variant=zh)
