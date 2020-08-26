@@ -75,7 +75,7 @@ The group’s results were published 30 years after the first **assessment** rep
 
 Despite warnings from scientists, these emissions have continued to rise as global temperatures continued to **soar**. According to figures released by the Met Office last week, there was a 0.14C increase in global temperatures between the decade 1980-89 and the decade 1990-1999, then a 0.2C increase between each of the following decades. This rate of increase is expected to rise, possibly to around 0.3C a decade, as carbon emissions continue on their upward **trajectory**.
 
-不顾科学家们的警告，尽管全球温度持续升高，温室气体排放量仍在增长。据英国气象局上周公布的数据，在1980~1989和1990~1999间都有0.14℃的增长，而在接下来的每十年中，都有0.2℃的增长。随着碳排放量持续上升，变暖速率也预计会增加，可能会达到每十年0.3℃左右。
+不顾科学家们的警告，尽管全球温度持续升高，温室气体排放量仍在增长。据英国气象局上周公布的数据，在1980\~1989和1990\~1999间都有0.14℃的增长，而在接下来的每十年中，都有0.2℃的增长。随着碳排放量持续上升，变暖速率也预计会增加，可能会达到每十年0.3℃左右。
 
 ### [阅读原文](https://www.theguardian.com/environment/2020/aug/23/earth-lost-28-trillion-tonnes-ice-30-years-global-warming)
 
