@@ -272,9 +272,9 @@ baidu_analytics: 粘贴到这里
 
 请捞一捞下面的 Google 收录方法。
 
-## Google 收录
+## 搜索引擎收录
 
-以 Next 主题为例
+以 Next 主题配置 Google 收录为例。
 
 登录 [Google Search Console](https://search.google.com/search-console/)
 
@@ -334,6 +334,10 @@ sitemap:
 
 在 [Google SearchConsole](https://search.google.com/search-console/sitemaps/) 侧栏找到站点地图，提交上面说的链接，完毕。
 
+### 百度收录
+
+百度收录也是完全同理，next 也内置了验证字段。需要注意的是，百度收录仅支持一级域名收录，所以假如没有自己的域名，GitHub Pages 必须是个人主页，而不是项目主页。
+
 ## 站内本地搜索
 
 安装插件：
@@ -344,7 +348,7 @@ npm install hexo-generator-searchdb --save
 编辑**项目**配置文件，新增字段：
 ```yml
 search:
-  path: search.json  #支持json或者xml，默认xml，但我用的有问题，推荐json
+  path: search.json  #支持 json 或者 xml，默认 xml，但我用的有问题，推荐 json
   field: post
   format: html
   limit: 10000
@@ -361,9 +365,9 @@ local_search:
 
 >“会有人讨论吗？”——好的，回来填评论系统的坑了。
 
-Next支持多评论系统同时存在 ... 虽然我不知道哪个憨憨会同时装躲个评论系统，评论数据又不能共享。
+Next 支持多评论系统同时存在 ... 虽然我不知道哪个憨憨会同时装躲个评论系统，评论数据又不能共享。
 
-Next内建支持很多评论系统，我选择了在国内支持比较友好的Valine。
+Next 内建支持很多评论系统，我选择了在国内支持比较友好的 Valine。
 
 可以跟着 Next 官方教程做，当然不愿意看英文也无所谓，欢迎继续跟着我~
 
@@ -371,7 +375,7 @@ Next内建支持很多评论系统，我选择了在国内支持比较友好的V
 
 ### [LeanCloud 注册登录](https://leancloud.cn/dashboard/login.html#/signin)
 
-没啥好说的，Valine使用了LeanCloud作为数据段，因此去LeanCloud注册登录就行，然后创建应用。
+没啥好说的，Valine 使用了 LeanCloud 作为数据段，因此去 LeanCloud 注册登录就行，然后创建应用。
 
 虽然这个注册需要实名制 ... 有点小小小在意。
 
@@ -380,7 +384,7 @@ Next内建支持很多评论系统，我选择了在国内支持比较友好的V
 进入创建好的应用，选择``设置->应用 Keys``子页，复制``APP ID ``和``App Key``。
 
 ### Next 配置
-在**主题**配置文件中搜索 comments,找到字段如下，这里基本不用修改，按需看注释选择配置吧：
+在**主题**配置文件中搜索 comments, 找到字段如下，这里基本不用修改，按需看注释选择配置吧：
 ```yml
 # Multiple Comment System Support
 comments:
@@ -402,24 +406,23 @@ comments:
     #  order: -2
 ```
 
-
 在**主题**配置文件中搜索 valine ，找到相应的字段如下：
 
 ```yml
 valine:
   enable: false
-  appid: #你的APPID
-  appkey: #你的APPkey
+  appid: #你的 APPID
+  appkey: #你的 APPkey
   notify: false # 邮件提醒
   verify: false # 验证码
   placeholder: 欢迎用你的脸滚一滚键盘~  #评论输入框预置文字
   avatar: mm # Gravatar style
   guest_info: nick,mail,link # 自定义评论区头部
   pageSize: 10 # 分页限制大小
-  language: # 语言,可用值: en, zh-cn
+  language: # 语言，可用值：en, zh-cn
   visitor: false # Article reading statistic
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
-  recordIP: false # 是否记录IP
+  recordIP: false # 是否记录 IP
   serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
   #post_meta_order: 0
 ```
@@ -430,20 +433,19 @@ valine:
 
 ### 页面单独关闭评论
 
-在markdown文件的元数据描述符中，添加``comments: false``，即可在当前页面关闭评论。
+在 markdown 文件的元数据描述符中，添加``comments: false``，即可在当前页面关闭评论。
 
 >推荐导航栏的那几个导航页都关掉，例如分类页、标签页、关于页。
 
 ### 管理评论数据
 
-登录LeanCloud对应应用的管理页面，选择``存储->结构化数据->Comment``，即可看到评论数据，并且可以偷偷行使你的管理权限。
+登录 LeanCloud 对应应用的管理页面，选择``存储->结构化数据->Comment``，即可看到评论数据，并且可以偷偷行使你的管理权限。
 
 ### 拓展插件 valine-admin
 
 [官网地址](https://github.com/zhaojun1998/Valine-Admin)
 
 是个中文教程，写的很详细，我就不重复了。~~我目前没有装它的需求~~
-
 
 ##  代码高亮 BUG
 代码高亮只有背景和行号存在， 代码字体本身不变

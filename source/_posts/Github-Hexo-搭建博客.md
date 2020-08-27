@@ -11,6 +11,8 @@ tags:
 
 **前置知识：git 使用方法，github 建库方法，会在命令行里敲东西**
 
+>注意GitHub仓库最好建的是user.github.io仓库，这样GitHub Pages 才能获得一级域名。而二级域名在进行某些扩展时有问题。
+
 ##  安装环境
 ### 安装 node.JS
 [官网下载安装程序，默认安装即可](https://nodejs.org/en/download/)
@@ -65,7 +67,7 @@ URL 小段为：
 ```yml
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: 访问网址，例如 https://alobal.github.io/Blog/
+url: 访问网址，例如 https://alobal.github.io/
 root: 仓库名，例如/Blog
 ```
 

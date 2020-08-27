@@ -13,8 +13,8 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://alobal.github.io/Blog/
-root: /Blog
+url: https://alobal.github.io/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -98,9 +98,12 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: git@github.com:Alobal/Blog.git
+- type: git
+  repo: git@github.com:Alobal/alobal.github.io.git
   branch: master
+- type: git
+  repo: git@e.coding.net:sitchprojects/Sitch/Sitch.git
+  branch: master 
 
 # prism_plugin: 
 #   mode: 'preprocess' 
