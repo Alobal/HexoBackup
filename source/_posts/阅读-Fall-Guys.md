@@ -1,5 +1,5 @@
 ---
-title: '阅读:Fall Guys'
+title: '阅读：Fall Guys'
 date: 2020-09-08 08:09:00
 categories:
 - 英语
@@ -57,7 +57,7 @@ Getting to the top is one thing, staying there is another, and Mediatonic has a 
 到达巅峰是一方面，能保持在巅峰则是另一方面。Mediatonic还有很长的路要走，他们要提供足够多的定期更新的新内容来留住现在这些善变的玩家的心。“很棒，健康的英国喜剧，某种程度上来说给人们的生活带来了无数的欢乐、色彩、波澜。”
 
 
-### (阅读原文)[https://www.theguardian.com/games/2020/aug/28/fall-guys-fortnite-meets-its-a-knockout-in-uk-video-game-hit]
+### [阅读原文](https://www.theguardian.com/games/2020/aug/28/fall-guys-fortnite-meets-its-a-knockout-in-uk-video-game-hit)
 
 # 词汇
 - neon-coloured 霓虹色
