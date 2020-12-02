@@ -17,28 +17,7 @@ date: 2020-02-17 02:17:00
 然而.ssh目录明明就在用户名文件夹下存在= =
 
 
-### 输入scp ./test.txt root@remotenode:/root/test.win
-无法找到文件 : No Such File
-事实上这个文件存在
-
-
-## 原因猜测: 用户名带中文或特殊字符,  导致路径无法识别
-cmd和PowerShell 的编码都是GBK, 讲道理是可以用中文的...
-
-但是使用SSH命令显而易见可以看到中文名被解析成了转义字符 "\323" 之类的.
-
-使用ch找到目录和文件
-
-###   SSH root@remotenode
->输出: 
->>无法创建目录  Could not create directory: C:\users\\123\456\789\.ssh 
->>无法添加信任主机列表 Failed to add.....
->
-
 配置的免密登录远程主机也不能用
-
-
-然而.ssh目录明明就在用户名文件夹下存在= =
 
 
 ###  scp ./test.txt root@remotenode:/root/test.win
