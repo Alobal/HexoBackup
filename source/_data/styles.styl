@@ -9,7 +9,7 @@
 
 //背景图片
 body {
-    background: url(https://steamuserimages-a.akamaihd.net/ugc/773995927256007305/B0164C5CACA1CE42E54BAC8DDD1B4A307D2485DF/) no-repeat;
+    background: url(/images/background.jpg) no-repeat;
     background-attachment: fixed;//背景相对固定
     background-size: 100% 100%;//图片缩放到页面大小
 }
@@ -40,7 +40,7 @@ body {
 }
 //侧边菜单栏
 .header-inner {
-    background: #ffffffbf;
+    background: #ffffffff;
 }
 
 //侧边选中菜单
@@ -69,7 +69,7 @@ body {
 
 //侧边概况栏
 .sidebar-inner{
-    background: #ffffffbf;
+    background: #ffffffff;
 }
 
 //侧边标题栏
@@ -80,8 +80,14 @@ body {
 
 //文章主板块
 .content-wrap {
-    box-shadow: 0px 10px 20px 10px #7d7c7ca6;//辉光边缘
+    transition:0.3s;
 }
+
+//文章主板块悬浮
+.content-wrap : hover{
+    box-shadow: 0.2em 0.2em 5 5 #ebc65a;
+    background: #fff;
+    }
 
 
 // //网易云滚动栏
