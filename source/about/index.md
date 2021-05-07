@@ -22,4 +22,8 @@ type: about
 
 
 
-#### <center>三年计划：等待考研初试成绩 √ 等待复试ing </center>
+#### <center>三年计划 </center>
+
+考研进展：初试第七，综合第五，等待导师选择√
+
+目前做taichi和pyqt的毕设，争取四月份结束。

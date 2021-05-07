@@ -9,7 +9,7 @@ tags:
 ---
 ## 前言
 
-本文为翻译 Microsoft 的 [英文原文](https://code.visualstudio.com/docs/cpp/config-msvc)
+本文是我自己翻译 Microsoft 的 [英文原文](https://code.visualstudio.com/docs/cpp/config-msvc)
 
 因为自己刚学 C++的时候，直接是装的 Visual Studio 2017，一套 20G 的 IDE 解决所有事情，但是用着用着发现了 Visual Studio Code 这个极致现代美感的编辑器！再看 VS 那傻大粗的体量实在不想用。
 

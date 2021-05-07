@@ -71,7 +71,7 @@
 	data-server="tencent" 
 	data-type="playlist" 
 	data-fixed="true"	
-	data-order="list"
+	data-order="random"
 	data-volume="0.65"
 	data-autoplay="false"   
 	date-preload="auto"
