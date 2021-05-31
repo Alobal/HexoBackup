@@ -1,6 +1,8 @@
 ---
 title: 《SexEducation 2》观后感
 date: 2021-05-07 19:35:26
+categories:
+- 生活
 tags:
 ---
 ## 爱恨分明的各路人色（剧透吐槽）
