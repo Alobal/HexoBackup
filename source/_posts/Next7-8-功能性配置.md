@@ -106,17 +106,109 @@ categories:
 - 博客搭建
 ```
 
-##  网易云音乐
-先去网易云音乐里生成外链播放器， 不能生成的可查找特殊方法生成。
+## hexo文章资源管理
+
+
+想要简单使用懒得管理，直接放在 **项目目录/source/images** 中。然后通过 **/images/something.jpg** 路径进行调用。
+
+想要有规律的整理的话，hexo也有自带组织方式。资源管理功能打开后，Hexo会在hexo new的时候创建一个和文章同名文件夹，将文章相关资源放进去即可。生成网页时资源和文章在同一路径，因此可以利用相对路径直接调用资源。
+
+[hexo文档相关章节](https://hexo.io/zh-cn/docs/asset-folders)
+
+项目配置中设置：
+```yml
+post_asset_folder: true
+```
+
+>图片推荐使用Win10照片编辑器质量调整进行压缩。
+用照片编辑器打开图片，右键--调整大小--自定义尺寸--质量40%。压缩比高的惊人，粗略观感也没有太大区别。例如我1.8KB的图片质量40%可以变成0.09KB。
+
+## 音乐
+
+###  网易云音乐
+先去网易云音乐里歌曲页面生成**外链播放器**， 不能生成的可查找特殊方法生成。
 
 在 项目/themes/next/layout/_macro/sidebar.swig 中， 插入复制的代码，比如插入在最下面某一段。
 >注意 2020 版本后缀不是 swig，相关文件也不一样
+
+### aplayer全局音乐播放器
+
+虽然网易云音乐足够播放一首歌或一个歌单，但是仅限定于网易云可怜的版权库里。
+
+通过使用APlayer播放器，可以播放任意来源的音乐，例如QQ音乐【我喜欢】的歌单。
+
+>注意是原版APlayer，不是hexo-tag-aplayer
+
+无基础偷懒可以复制以下代码至 **主题目录/layout/_layout.swig** 中，我放在了``</html>``的前一行。
+
+>有基础可以去看看中文文档，安装npm包，并且自定义使用。
+
+可以通过文档查看各个参数的意义，进行播放的设置。
+示例代码中是以**QQ音乐**为服务器，以**我自己的歌单**为播放列表。
+
+```html
+<body>
+<!-- require APlayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
+</body>
+<!--如果将本体放在body里面，导致页面加载出现问题，请尝试放到body体后面-->
+<div class="aplayer" 
+	data-id="3036324986" 
+	data-server="tencent" 
+	data-type="playlist" 
+	data-fixed="true"	
+	data-order="list"
+	data-volume="0.65"
+	data-autoplay="false"   
+	date-preload="auto"
+	data-theme="#cc543a">
+</div>
+```
+
+当然，全局播放器会在每一次切换站内页面时中断。
+要不中断播放请安装pjax功能，详见下一节。
+
+>我为了百度统计，hexo-douban等功能关闭了pjax。
+
+
+参考资料：[Macyrate的APlyaer博客](https://hakurei.red/2019/11/25/%E4%B8%BAHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%85%A8%E5%B1%80APlayer%E6%92%AD%E6%94%BE%E5%99%A8/)
+
+[Aplayer文档](https://aplayer.js.org/#/zh-Hans/)
+
+
+## pjax
+
+pjax可以使网页变成单页应用，即在站内切换页面并不会刷新网页，极大提高网页运行速度。
+
+但是！这么好的东西为什么不是默认开启的呢？
+pjax会扰乱网站的一些其他功能。如hexo-douban页面，百度统计的访客记录 ......
+
+如果网站没有其他功能需求，建议开Pjax，否则建议不安装。
+
+
+在Next配置文件中设置pjax为true，并且去对应网站查看安装插件的方法。
+如git clone安装：``git clone https://github.com/theme-next/theme-next-pjax themes/next/source/lib/pjax``。
+
+```yml
+# Easily enable fast Ajax navigation on your website.
+# Dependencies: https://github.com/theme-next/theme-next-pjax
+pjax:
+  enable: true
+```
+
+而且，next里设置pjax为false不起作用？
+
+想要关闭pjax功能直接删掉git clone的pjax库。
+并且将 **主题目录/layout/_scripts/pjax.swig** 内容注释掉
 
 ## 导入豆瓣评价页面
 
 个人博客肯定想记录点自己生活向的东西，看过的电影，玩过的游戏就是一个很好的记录对象。
 
-之前我是用 markdown 写了个文本条目性质的，不说难看吧，但起码豆瓣条目自带一些影片介绍信息。..
+之前我是用 **markdown** 写了个文本条目性质的，不说难看吧，但起码豆瓣条目自带一些影片介绍信息。..
 
 ### 安装 hexo-douban 插件
 
@@ -215,7 +307,7 @@ symbols_count_time:
   wpm: 200    #每分钟阅读字数
 ```
 
-next 主题 _config.yml 里找到字段 symbols_count_time 按需配置即可：
+next 主题的_config.yml 里找到字段 symbols_count_time 按需配置即可：
 ```yml
 # Post wordcount display settings
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
