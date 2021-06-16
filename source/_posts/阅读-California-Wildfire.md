@@ -2,7 +2,7 @@
 title: 阅读：California Wildfire
 date: 2020-09-10 08:36:39
 categories:
-- 英语
+- 考研
 tags:
 - 英语
 ---

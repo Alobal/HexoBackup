@@ -2,7 +2,7 @@
 title: '阅读：cosmic event'
 date: 2020-09-03 08:18:47
 categories:
-- 英语
+- 考研
 tags:
 - 英语
 ---

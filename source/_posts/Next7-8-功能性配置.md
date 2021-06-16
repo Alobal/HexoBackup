@@ -7,8 +7,7 @@ tags:
 - 博客
 ---
 
-# 前情提要
-
+环境信息：
 - Next 7.8.0
 - hexo 4.2.1
 - npm 6.14.5
@@ -29,7 +28,7 @@ Next 在 2020 更新了它的母仓库，由于原仓库的管理人员跑路玩
 
  <!-- more --> 
 
-# 功能性配置
+
  
 
 一些比较常规的功能性配置 Next 文档里都有的。
@@ -536,23 +535,18 @@ valine:
 
 [官网地址](https://github.com/zhaojun1998/Valine-Admin)
 
-是个中文教程，写的很详细，我就不重复了。~~我目前没有装它的需求~~
+是个中文教程，写的很详细，我就不重复了。我目前没有装它的需求
 
-##  代码高亮 BUG
-代码高亮只有背景和行号存在， 代码字体本身不变
+## Hexo忽略文章
 
-打扰，hexo 自带的 hljs 简直是个巨坑，找了一整天的解决方案都没用。~~我恨不得删项跑路~~
+不要用 exclude 来忽略 'source/_posts/' 中的文章，这样没有用。
+在要忽略的文件的文件名之前加一个下划线 '_'即可忽略。
+使用 'skip_render'可跳过指定文件的渲染，即将文件原封不动发布。
 
->正确配置了项目设置里的 highlight 字段，和 next 主题设置里的 codeblock 风格
+## hightlight代码配色
 
-跑了跑了连夜跑了 ，~~隔壁 prism-plugin 真香~~。
+觉得 next 的几款 highlight 都不太搭白底网站，于是摸了一遍发现``themes\next\source\css\_common\scaffolding\highlight\``路径下的文件存储着几套主题的配色，可以自己改一套喜欢的了。
 
->意外的是，prism 设置了 custom_css 的无效路径后，即使 hexo 自带 highlight 是关闭状态，代码高亮居然被 hexo 的 highlight 接管了，除了行号没有一切正常。当然，要正常使用还是用 prism 吧。
-
-好吧也不是那么香，prism 的语法提示挺简陋的。.. 烦到，这个坑好大 (╯‵□′)╯︵┻━┻
-
-被简陋到，改回 highlight 了，不知道为啥高亮又可以用了，但是觉得 next 的几款 highlight 都不太搭白底网站，于是摸了一遍发现``themes\next\source\css\_common\scaffolding\highlight\``路径下的文件存储着几套主题的配色，可以自己改一套喜欢的了。
-
-# 参考资料
+## 参考资料
 [Next Document](https://theme-next.js.org/docs/)
 [Next 中文入门文档](http://theme-next.iissnan.com/)

@@ -2,7 +2,7 @@
 title: '阅读：California heatwave'
 date: 2020-09-07 08:06:21
 categories:
-- 英语
+- 考研
 tags:
 - 英语
 ---

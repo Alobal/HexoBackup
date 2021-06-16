@@ -2,7 +2,7 @@
 title: 阅读：Indian COVID-19
 date: 2020-08-28 08:11:27
 categories:
-- 英语
+- 考研
 tags:
 - 英语
 ---

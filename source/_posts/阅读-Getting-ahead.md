@@ -2,7 +2,7 @@
 title: '阅读：Getting ahead'
 date: 2020-09-01 08:17:22
 categories:
-- 英语
+- 考研
 tags:
 - 英语
 ---

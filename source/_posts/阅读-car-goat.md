@@ -2,7 +2,7 @@
 title: '阅读：Win the car,dodge the goat'
 date: 2020-08-31 08:23:44
 categories:
-- 英语
+- 考研
 tags:
 - 英语
 ---

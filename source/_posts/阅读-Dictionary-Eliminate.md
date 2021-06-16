@@ -2,7 +2,7 @@
 title: 阅读：Dictionary Eliminate
 date: 2020-09-02 08:05:10
 categories:
-- 英语
+- 考研
 tags:
 - 英语
 ---

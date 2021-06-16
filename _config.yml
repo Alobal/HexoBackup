@@ -62,7 +62,7 @@ index_generator:
   order_by: -date
 
 # Category & Tag
-default_category: uncategorized
+default_category: 生活
 category_map:
 tag_map:
 
@@ -88,7 +88,6 @@ pagination_dir: page
 ## include:/exclude: options only apply to the 'source/' folder
 include:
 exclude: 
-  - "_posts/电子游戏与艺术.md"
 ignore:
 
 # Extensions

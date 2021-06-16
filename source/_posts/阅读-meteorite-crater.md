@@ -2,7 +2,7 @@
 title: '阅读：meteorite crater'
 date: 2020-09-04 08:15:51
 categories:
-- 英语
+- 考研
 tags:
 - 英语
 ---

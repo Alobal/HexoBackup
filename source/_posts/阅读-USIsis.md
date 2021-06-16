@@ -2,7 +2,7 @@
 title: 阅读：Drop Death
 date: 2020-08-20 08:30:20
 categories:
-- 英语
+- 考研
 tags:
 - 英语
 ---

@@ -2,7 +2,7 @@
 title: '阅读:mathematician prize'
 date: 2020-09-11 08:16:07
 categories:
-- 英语
+- 考研
 tags:
 - 英语
 ---
